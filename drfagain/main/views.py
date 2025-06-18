@@ -11,3 +11,7 @@ class AnimalsAPIView(generics.ListCreateAPIView):
 class AnimalAPIUpdate(generics.UpdateAPIView):
     queryset = Animals.objects.all()
     serializer_class = AnimalSerializer
+
+class AnimalAPIMore(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Animals.objects.all()
+    serializer_class = AnimalSerializer

@@ -20,6 +20,7 @@ from main.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/animals/', AnimalsAPIView.as_view()),
-    path('/animals/<int:pk>', AnimalAPIUpdate.as_view()),
+    path('animals/', AnimalsAPIView.as_view()),
+    path('animals/<int:pk>/', AnimalAPIUpdate.as_view()),
+    path('animalbyone/<int:pk>/', AnimalAPIMore.as_view()),
  ]
