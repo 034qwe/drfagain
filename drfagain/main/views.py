@@ -9,13 +9,12 @@ from .mypermissions import *
 class AnimalsAPIView(generics.ListCreateAPIView):
     queryset = Animals.objects.all()
     serializer_class = AnimalSerializer
-    permission_classes = (IsAdminOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
 
-
-class AnimalAPIUpdate(generics.UpdateAPIView):
+class AnimalAPIUpdate(generics.RetrieveUpdateAPIView):
     queryset = Animals.objects.all()
     serializer_class = AnimalSerializer
-    permission_classes = (IsOwnerOrReadOnly)
+    permission_classes = (IsOwnerOrReadOnly,)
 
 class AnimalAPIDestroy(generics.DestroyAPIView):
     queryset = Animals.objects.all()
